@@ -4,7 +4,7 @@
 
 **Instructeurs:** 
 [Sandra Cortijo](mailto:sandra.cortijo@cnrs.fr), 
-[Océane Cassan](mailto:Oceane.CASSAN@cnrs.fr)
+[Océane Cassan](mailto:Oceane.CASSAN@lirmm.fr)
 
 
 ## Description
