@@ -154,7 +154,6 @@ mutate(expt1, late.flowering=if_else(condition = days.to.bolt>70, TRUE, FALSE))
 
 
 
-mutate(C = if_else(A == B, "Equal", "Not Equal"))
 
 <br>
 

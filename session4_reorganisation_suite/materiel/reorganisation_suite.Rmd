@@ -225,7 +225,7 @@ A contrario, pour séparer une colonne en deux ou plusieurs colonnes, utilisez l
 
 ```{r warning=FALSE}
 # Créez deux nouvelles colonnes
-expt1.separated <- separate(expt1, background, into=c("genotype", "FRI mutation"))
+expt1.separated <- separate(expt1, background, into=c("genotype_background", "FRI_mutation"))
 
 # Vérifier que la nouvelles colonnes sont bien là
 colnames(expt1.separated)
