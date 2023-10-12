@@ -38,7 +38,7 @@ Nous allons utiliser Rstudio, qui est un logiciel qui permet d'utiliser une inte
 
 Voici à quoi ressemble RStudio:
 
-![](http://www.datacarpentry.org/R-ecology-lesson/img/rstudio-screenshot.png)
+![](https://datacarpentry.org/R-ecology-lesson/fig/rstudio-screenshot.png)
 
 # Coder dans R
 
