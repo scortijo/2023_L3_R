@@ -270,7 +270,7 @@ ggplot(expt1, aes(genotype, rosette.leaf.num)) +
 
 >**Exercice 2:** Modifiez le graphique pour que les points soient devant plutôt que derrière les boxplots. 
 
->**BONUS**: Ajouter la géométrie dotplot plutôt que jitter. Utilisez les exemples dans l'aide (avec ?nom de fonction) pour savoir comment l'utiliser, ou lisez [cette page de blog](http://www.sthda.com/french/wiki/ggplot2-dot-plot-guide-de-demarrage-rapide-logiciel-r-et-visualisation-de-donnees)
+>**BONUS**: Ajouter la géométrie dotplot plutôt que jitter. Utilisez les exemples dans l'aide (avec ?nom de fonction) pour savoir comment l'utiliser, ou lisez [cette page de blog](http://www.sthda.com/english/wiki/ggplot2-dot-plot-quick-start-guide-r-software-and-data-visualization)
 
 
 ## Couleurs!
