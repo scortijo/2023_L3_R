@@ -40,7 +40,7 @@ Tout d'abord, créez un nouveau _script R_ et préparez votre environnement de t
 ```{r}
 # Chargez la librairie `tidyverse`
 
-# Changez votre répertoire de travail pour être dans `session3_plots_reorganisation`
+# Changez votre répertoire de travail pour être dans `session4_reorganisation_suite`
 
 # Importer `burghardt_et_al_2015_expt1.txt` et mettez le dans un objet appelé `expt1`
 
