@@ -169,7 +169,7 @@ Parfois, le format de vos données ne vous permet pas de faire l'analyse ou le g
 
 Par exemple, essayons de reproduire le graphique suivant extrait de [Burghard et al 2015](https://nph.onlinelibrary.wiley.com/doi/full/10.1111/nph.13799)
 
- ![](images/Burghard_2015_fig2_a.png)
+ ![](Images/Burghard_2015_fig2_a.png)
 
 <br>
 
@@ -317,7 +317,7 @@ Ce type d'opération peut être fait avec la combinaison de deux fonctions: `gro
 Notez que `group_by()` ne change pas le format de la table de données. Cette fonction liste des lignes qui doivent être groupées. Nous pouvons ensuite utiliser `summarise()` pour extraire des statistiques descriptives de chaque groupe.
 
 
-![](images/group_by_summarise.png)
+![](Images/group_by_summarise.png)
 
 
 
