@@ -506,7 +506,7 @@ Par défaut, les catégories dans un graphique sont ordonnées alphabétiquement
 
 Par exemple, essayons de reproduire le graphique suivant:
 
-![](images/Burghard_fig2B.png)
+![](Images/Burghard_fig2B.png)
 
 
 
