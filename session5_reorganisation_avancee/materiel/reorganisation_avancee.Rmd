@@ -126,7 +126,7 @@ Afin d'exporter ce graphique et de le sauver, nous utilisons la fonction `ggsave
 ggplot(expt1_long, aes(x=trait, y=time.in.days, color=genotype)) +
   geom_boxplot()
 
-ggsave("boxplot_daystobolt_daystoflower_genotypes.jpg")
+ggsave("boxplot_daystobolt_daystoflower_genotypes.pdf")
 ```
 
 <br>
@@ -246,6 +246,9 @@ Toutes ces fonctions ont besoin de trois choses:
 - Le nom du second tableau (celui de droite)
 - Le nom de la colonne qui est utilisée pour combiner les tableaux ensemble (il est aussi possible d'utiliser plus d'une colonne)
 
+![](https://www.dofactory.com/img/sql/sql-joins.png)
+
+
 Afin de comprendre comment ces fonctions marchent, nous allons utiliser deux jeux de données qui sont déjà présent dans R:
 
 - `band_members` 
@@ -261,7 +264,7 @@ band_instruments
 La fonction `full_join()`, permet de garder toutes les lignes et toutes les colonnes des deux tableaux dans le nouveau tableau créé en les combinant. Dans notre cas, pour avoir toutes les information sur le groupe de musique et l'instrument pour chaque musicien, nous utilisons:
 
 
-```{r full_join2}
+```{r full_join2, eval=F}
 full_join(band_members, band_instruments, by="name")
 ```
 
@@ -280,7 +283,7 @@ left_join(band_members, band_instruments, by="name")
 
 - Pour garder les données uniquement pour les musiciens présents dans ``band_instruments`` (table de droite dans la fonction), nous utilisons `right_join()`:
 
-```{r}
+```{r, eval=F}
 right_join(band_instruments, band_members, by="name")
 ```
 
@@ -452,7 +455,7 @@ Si nous voulons y ajouter le nombre d'observations pour chaque groupe, nous util
 group_by(expt1, genotype) %>% 
   summarise(n.obs=n()) %>% 
   mutate(n.obs=paste("n =",n.obs)) %>% 
-  full_join(expt1, by="genotype") %>% 
+  inner_join(expt1, by="genotype") %>% 
   ggplot( aes(genotype, rosette.leaf.num)) +
   geom_boxplot() +
   geom_text(aes(label=n.obs, x=genotype, y=0))
@@ -484,7 +487,7 @@ Par exemple, si nous voulons faire un boxplot `rosette.leaf.num` pour chaque gé
 group_by(expt1, genotype, fluctuation) %>% 
   summarise(n.obs=n()) %>% 
   mutate(n.obs=paste("n =",n.obs)) %>% 
-  full_join(expt1, by=c("genotype", "fluctuation")) %>% 
+  inner_join(expt1, by=c("genotype", "fluctuation")) %>% 
   ggplot( aes(genotype, rosette.leaf.num, fill=fluctuation)) +
   geom_boxplot() +
   geom_text(aes(label=n.obs, x=genotype, y=-2),position=position_dodge(0.8), angle=45)
