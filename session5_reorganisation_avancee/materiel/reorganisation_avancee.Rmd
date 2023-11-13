@@ -73,7 +73,7 @@ Imaginons que nous souhaitons faire un boxplot pour le `days.to.bolt` et le `day
 
 
 ```{r,  eval = TRUE,message=FALSE, echo=FALSE, warning=FALSE}
-gather(expt1, "trait", "time.in.days", days.to.bolt, days.to.flower) %>% 
+pivot_longer(expt1, names_to = "trait", values_to = "time.in.days", cols=c(days.to.bolt, days.to.flower)) %>% 
   ggplot(aes(x=trait, y=time.in.days, color=genotype)) +
   geom_boxplot()
 ```
@@ -103,7 +103,7 @@ Dans ce cas, le nom des colonnes sélectionnées servent à remplir les catégor
 
 - le nom des anciennes colonnes que l'ont veut rassembler : _cols_
 
-Voici comment restructurer notre tableau avec `gather()`:
+Voici comment restructurer notre tableau avec `pivot_longer()`:
 
 ```{r}
 expt1_long <- pivot_longer(expt1, names_to = "trait", values_to = "time.in.days", cols=c(days.to.bolt, days.to.flower))
@@ -264,7 +264,7 @@ band_instruments
 La fonction `full_join()`, permet de garder toutes les lignes et toutes les colonnes des deux tableaux dans le nouveau tableau créé en les combinant. Dans notre cas, pour avoir toutes les information sur le groupe de musique et l'instrument pour chaque musicien, nous utilisons:
 
 
-```{r full_join2, eval=F}
+```{r full_join2}
 full_join(band_members, band_instruments, by="name")
 ```
 
@@ -283,7 +283,7 @@ left_join(band_members, band_instruments, by="name")
 
 - Pour garder les données uniquement pour les musiciens présents dans ``band_instruments`` (table de droite dans la fonction), nous utilisons `right_join()`:
 
-```{r, eval=F}
+```{r,}
 right_join(band_instruments, band_members, by="name")
 ```
 
@@ -407,7 +407,7 @@ group_by(expt1, genotype) %>%
 summarise(mean.days.flower = mean(days.to.flower, na.rm = TRUE),
           sd.days.flower = sd(days.to.flower, na.rm = TRUE),
           median.days.flower = median(days.to.flower, na.rm = TRUE)) %>% 
-  gather(key="stat_type",value="stat_days_to_flower", mean.days.flower,median.days.flower) %>% 
+  pivot_longer(names_to ="stat_type",values_to ="stat_days_to_flower", cols = c(mean.days.flower,median.days.flower)) %>% 
   ggplot(aes(x=stat_type,y=stat_days_to_flower, col=genotype))+
   geom_point(size=2)
 ```
@@ -420,7 +420,8 @@ group_by(expt1, genotype) %>%
 summarise(mean.days.flower = mean(days.to.flower, na.rm = TRUE),
           sd.days.flower = sd(days.to.flower, na.rm = TRUE),
           median.days.flower = median(days.to.flower, na.rm = TRUE)) %>% 
-  gather(key="stat_type",value="stat_days_to_flower", mean.days.flower,median.days.flower) %>% 
+  pivot_longer(names_to = "stat_type",values_to = "stat_days_to_flower", 
+               cols=c(mean.days.flower,median.days.flower)) %>% 
   ggplot(aes(x=stat_type,y=stat_days_to_flower, col=genotype))+
   geom_point(size=2) +
   geom_line(aes(group=genotype))
