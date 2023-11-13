@@ -1842,23 +1842,7 @@ summarise(n.obs = n())</code></pre>
 ##  9 prmt5 FRI    125
 ## 10 vin3-4 FRI   121</code></pre>
 <p>Attention, <code>n()</code> ne peut être utilisé que dans la fonction
-<code>summarise()</code>. Il existe une autre fonction,
-<code>count()</code> qui permet de faire la même chose sans avoir besoin
-d’utiliser <code>group_by()</code> et <code>summarise()</code>:</p>
-<pre class="r"><code>count(expt1, genotype)</code></pre>
-<pre><code>## # A tibble: 10 × 2
-##    genotype       n
-##    &lt;chr&gt;      &lt;int&gt;
-##  1 Col Ama      135
-##  2 Col FRI      128
-##  3 Ler-1         68
-##  4 fca-6         64
-##  5 flc-3 FRI    136
-##  6 flk-1         60
-##  7 fve-3         60
-##  8 ld-1          60
-##  9 prmt5 FRI    125
-## 10 vin3-4 FRI   121</code></pre>
+<code>summarise()</code>.</p>
 <p><strong>Attention:</strong> Quand vous utilisez la fonction
 <code>group_by()</code>, les lignes du tableau restent groupées en
 fonction de la variable utilisée. Les opérations suivantes vont utiliser

@@ -366,14 +366,7 @@ group_by(expt1, genotype) %>%
 summarise(n.obs = n())
 ```
 
-Attention, `n()` ne peut être utilisé que dans la fonction `summarise()`. Il existe une autre fonction, `count()` qui permet de faire la même chose sans avoir besoin d'utiliser `group_by()` et `summarise()`:
-
-
-```{r}
-
-count(expt1, genotype)
-
-```
+Attention, `n()` ne peut être utilisé que dans la fonction `summarise()`. 
 
 
 
