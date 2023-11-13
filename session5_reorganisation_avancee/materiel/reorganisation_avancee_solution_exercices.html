@@ -363,8 +363,8 @@ d’accueil</a></p>
 <blockquote>
 <p><strong>Exercice 1:</strong></p>
 <ol style="list-style-type: decimal">
-<li>Utilisez la fonction <code>gather()</code> pour restructurer le
-tableau afin de faire un boxplot de <code>blade.length.mm</code> et
+<li>Utilisez la fonction <code>pivot_longer()</code> pour restructurer
+le tableau afin de faire un boxplot de <code>blade.length.mm</code> et
 <code>total.leaf.length.mm</code>, coloré par
 <code>fluctuation</code>.</li>
 </ol>
@@ -381,7 +381,8 @@ conclure à une différence de médiane entre les médiane des deux
 groupes.</li>
 </ol>
 </blockquote>
-<pre class="r"><code>gather(expt1, &quot;trait&quot;, &quot;length.mm&quot;, blade.length.mm, total.leaf.length.mm) %&gt;% 
+<pre class="r"><code>pivot_longer(expt1, names_to = &quot;trait&quot;, values_to =&quot;length.mm&quot;, 
+            cols = c(blade.length.mm, total.leaf.length.mm)) %&gt;% 
   ggplot(aes(x=trait, y=length.mm, color=fluctuation)) +
   geom_boxplot(notch=TRUE)</code></pre>
 <pre><code>## Warning: Removed 630 rows containing non-finite values (`stat_boxplot()`).</code></pre>
@@ -411,7 +412,8 @@ thème, les couleurs utilisée (visibles par des daltoniens), le titre et
 la valeur des axes et de la légende, de manière à avoir un graphique
 similaire au graphique suivant:</p>
 </blockquote>
-<pre class="r"><code>gather(expt1, &quot;trait&quot;, &quot;length.mm&quot;, blade.length.mm, total.leaf.length.mm) %&gt;% 
+<pre class="r"><code>pivot_longer(expt1, names_to = &quot;trait&quot;, values_to =&quot;length.mm&quot;, 
+            cols = c(blade.length.mm, total.leaf.length.mm)) %&gt;% 
   ggplot(aes(x=trait, y=length.mm, fill=fluctuation)) +
   geom_boxplot(notch = TRUE) +
   scale_fill_brewer(palette = &quot;Set2&quot;, labels = c(&quot;Con&quot;=&quot;Constant&quot;, &quot;Var&quot;=&quot;Variable&quot;), 
