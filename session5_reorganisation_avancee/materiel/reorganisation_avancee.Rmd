@@ -34,7 +34,7 @@ Avant de rentrer dans le vif du sujet il nous faut mettre en place notre environ
 ```{r}
 # Chargez la librairie `tidyverse`
 
-# changer votre répertoire de travail pour être dans le dossier `session4_reorganisation_suite`:
+# changer votre répertoire de travail pour être dans le repertoire de la session 5
 
 # Importer `burghardt_et_al_2015_expt1.txt` et mettez le dans un objet appelé `expt1`
 
