@@ -76,7 +76,15 @@ Les différentes séances sont (avec accès au cours):
 ### Séance 6 (20/11/2023 13h15-16h30, salle TD5.129): Exam blanc, Correction de l'exam blanc et trucs et astuces
 
 
+[Exam blanc](session6_exam_blanc/exam_blanc.html) 
+
+[Solution de l'exam blanc](session6_exam_blanc/exam_blanc_2023_solution.html)
+
+
+
+
 ### Séance 7 (7/12/2023 9h45-11h15, salle TD5.129): Exam
+
 
 
 <br>
